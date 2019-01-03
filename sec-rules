@@ -12,8 +12,8 @@ desc=User $1 failed to change ID to $2
 context=!LOGACTIVE_$1
 action=event %s; create LOGACTIVE_$1 7200; pipe '%s' mail root@localhost
 ptype2=RegExp
-pattern2=pam_unix\(su:session\): session opened for user (\w*) by (\w*)
-desc2=User %1 successfully changed ID to %2
+pattern2=pam_unix\(su:session\): session opened for user $1 by $2
+desc2=User $1 successfully changed ID to $2
 action2=logonly
 window=10
 
@@ -23,8 +23,8 @@ pattern=pam_unix\(su:auth\): authentication failure; .*ruser=(\w*).*user=(\w*)
 desc=User $1 failed to change ID to $2
 action=event %s
 ptype2=RegExp
-pattern2=pam_unix\(su:session\): session opened for user (\w*) by (\w*)
-desc2=User %1 successfully changed ID to %2
+pattern2=pam_unix\(su:session\): session opened for user $1 by $2
+desc2=User $1 successfully changed ID to $2
 action2=logonly
 window=10
 
